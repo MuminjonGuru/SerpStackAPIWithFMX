@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{46A3EA26-A7CA-4167-A70D-DB5DBBF0EC17}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Test\IntegrateSearchEngineDelphiFMX_tests.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="IntegrateSearchEngineDelphiFMX.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="IntegrateSearchEngineDelphiFMX_tests">
+        <MSBuild Projects="Test\IntegrateSearchEngineDelphiFMX_tests.dproj"/>
+    </Target>
+    <Target Name="IntegrateSearchEngineDelphiFMX_tests:Clean">
+        <MSBuild Projects="Test\IntegrateSearchEngineDelphiFMX_tests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IntegrateSearchEngineDelphiFMX_tests:Make">
+        <MSBuild Projects="Test\IntegrateSearchEngineDelphiFMX_tests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="IntegrateSearchEngineDelphiFMX">
+        <MSBuild Projects="IntegrateSearchEngineDelphiFMX.dproj"/>
+    </Target>
+    <Target Name="IntegrateSearchEngineDelphiFMX:Clean">
+        <MSBuild Projects="IntegrateSearchEngineDelphiFMX.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="IntegrateSearchEngineDelphiFMX:Make">
+        <MSBuild Projects="IntegrateSearchEngineDelphiFMX.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="IntegrateSearchEngineDelphiFMX_tests;IntegrateSearchEngineDelphiFMX"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="IntegrateSearchEngineDelphiFMX_tests:Clean;IntegrateSearchEngineDelphiFMX:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="IntegrateSearchEngineDelphiFMX_tests:Make;IntegrateSearchEngineDelphiFMX:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,179 @@
+inherited NewFormFrame: TNewFormFrame
+  inherited MainLayout: TGridPanelLayout
+    ControlCollection = <
+      item
+        Column = 0
+        Control = HeaderRect
+        Row = 0
+      end
+      item
+        Column = 0
+        Control = VertScrollBox1
+        Row = 1
+      end
+      item
+        Column = 0
+        Control = Edit1
+        Row = 2
+      end>
+    RowCollection = <
+      item
+        Value = 6.019674973878915000
+      end
+      item
+        Value = 86.062034651974680000
+      end
+      item
+        Value = 7.918290374146402000
+      end>
+    inherited HeaderRect: TRectangle
+      Size.Height = 35.335491180419920000
+      inherited CaptionLbl: TLabel
+        Size.Height = 32.335491180419920000
+        TextSettings.Font.Size = 20.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        Text = 'SerpStack API + Delphi FMX'
+        inherited HamburgerImg: TPath
+          Size.Height = 15.335491180419920000
+          inherited HitBox: TLayout
+            Size.Height = 21.335491180419920000
+          end
+        end
+      end
+    end
+    object VertScrollBox1: TVertScrollBox
+      Align = Client
+      Size.Width = 328.000000000000000000
+      Size.Height = 505.184173583984400000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 328.000000000000000000
+      Viewport.Height = 505.200000000000000000
+      object Rectangle1: TRectangle
+        Align = Top
+        Fill.Color = claAzure
+        Margins.Left = 7.000000000000000000
+        Margins.Top = 5.000000000000000000
+        Margins.Right = 7.000000000000000000
+        Margins.Bottom = 5.000000000000000000
+        Position.X = 7.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 314.000000000000000000
+        Size.Height = 170.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Thickness = 0.000000000000000000
+        XRadius = 15.000000000000000000
+        YRadius = 15.000000000000000000
+        object Label1: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 3.000000000000000000
+          Position.Y = 3.000000000000000000
+          Size.Width = 308.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'Title: Delphi Programming in 2021'
+          TabOrder = 3
+        end
+        object Label2: TLabel
+          Align = Top
+          StyledSettings = [Family, FontColor]
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 3.000000000000000000
+          Position.Y = 42.000000000000000000
+          Size.Width = 308.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'URL:   https://blogs.embarcadero.com'
+          TabOrder = 0
+        end
+        object Label3: TLabel
+          Align = Top
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 3.000000000000000000
+          Position.Y = 81.000000000000000000
+          Size.Width = 308.000000000000000000
+          Size.Height = 33.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 16.000000000000000000
+          Text = 'Domain: www.blogs.embarcadero.com'
+          TabOrder = 1
+        end
+        object Label4: TLabel
+          Align = Top
+          AutoSize = True
+          StyledSettings = [Family, Style, FontColor]
+          Margins.Left = 3.000000000000000000
+          Margins.Top = 3.000000000000000000
+          Margins.Right = 3.000000000000000000
+          Margins.Bottom = 3.000000000000000000
+          Position.X = 3.000000000000000000
+          Position.Y = 120.000000000000000000
+          Size.Width = 308.000000000000000000
+          Size.Height = 38.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          Text = 'Displayed-URL: https://blogs.embarcadero.com/delphiprogramming'
+          TabOrder = 2
+        end
+      end
+    end
+    object Edit1: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Client
+      Anchors = []
+      TabOrder = 1
+      TextSettings.Font.Size = 16.000000000000000000
+      Size.Width = 328.000000000000000000
+      Size.Height = 46.480346679687500000
+      Size.PlatformDefault = False
+      TextPrompt = 'keyword'
+      StyledSettings = [Family, Style, FontColor]
+      object BtnSendRequest: TButton
+        Align = MostRight
+        StyledSettings = [Family, Style, FontColor]
+        Position.X = 200.000000000000000000
+        Size.Width = 128.000000000000000000
+        Size.Height = 46.480346679687500000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Send Request'
+        TextSettings.Font.Size = 16.000000000000000000
+        OnClick = BtnSendRequestClick
+      end
+    end
+  end
+  object RESTClient1: TRESTClient
+    BaseURL = 
+      'http://api.serpstack.com/search?access_key=d41fb824d005de9f7dca1' +
+      'd6a3eb43732&query=delphi+programming'
+    Params = <>
+    Left = 256
+    Top = 400
+  end
+  object RESTRequest1: TRESTRequest
+    AssignedValues = [rvConnectTimeout, rvReadTimeout]
+    Client = RESTClient1
+    Params = <>
+    Response = RESTResponse1
+    Left = 160
+    Top = 400
+  end
+  object RESTResponse1: TRESTResponse
+    Left = 56
+    Top = 400
+  end
+end
